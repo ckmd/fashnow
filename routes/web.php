@@ -12,9 +12,7 @@
 */
 
 
-Route::get('/', function () {
-  return view('post.index');
-});
+Route::get('/', 'ProductsController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -24,5 +22,4 @@ Route::get('/product_summary','BuysController@showKeranjang');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/{id}', 'HomeController@show');
-Route::get('/products','ProductsController@index');
-
+// Route::get('/products','ProductsController@index');

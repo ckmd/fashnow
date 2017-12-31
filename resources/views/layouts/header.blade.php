@@ -12,9 +12,10 @@
   <div class="navbar-inner">
   	<!--logo-->
     <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
-		<form class="form-inline navbar-search" method="post" action="products.html" >
+		<form class="form-inline navbar-search" method="post" action="{{ url('/products') }}" >
 		<input id="srchFld" class="srchTxt" type="text" />
-		  <select class="srchTxt">
+        {{ csrf_field() }}
+          <select class="srchTxt">
 			<option>Atasan Wanita </option>
 			<option>Bawahan Wanita </option>
 			<option>Aksesoris Wanita </option>
@@ -135,4 +136,11 @@
     </ul>
   </div>
 </div>
+
+</div>
+<div id="sidebar" class="span3">
+		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		
+		
+			  </div>
 </div>

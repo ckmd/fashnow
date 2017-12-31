@@ -17,7 +17,7 @@
 					<a href="product_details.html"><img src="themes/images/products/b1.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Product name</h5>
-					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn" href="{{ url('/product_details')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>

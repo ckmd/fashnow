@@ -12,9 +12,7 @@
 */
 
 
-Route::get('/', function () {
-  return view('post.index');
-});
+Route::get('/', 'ProductsController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

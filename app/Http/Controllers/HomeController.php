@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index(){
       $items = Inventory::all();
-      return view('home', ['items'=>$items]);
+      return view('layouts.master');
     }
     public function show($id){
       $item = Inventory::find($id);

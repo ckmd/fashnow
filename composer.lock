@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "04aa90e246a5a2c2d50cda537d8eade5",
+    "content-hash": "142dd6b3b85d350b08f95bdfe67ac5c0",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -2171,16 +2171,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.16",
+            "version": "v0.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1"
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d4c8eab0683dc056f2ca54ca67f5388527c068b1",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2239,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-12-10T21:49:27+00:00"
+            "time": "2017-12-28T16:14:16+00:00"
         },
         {
             "name": "ramsey/uuid",

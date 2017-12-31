@@ -35,6 +35,8 @@
 <div id="header">
     @include('layouts.header')
 </div>
+
+
 <div id="mainBody">
 	@yield('content')
 </div>

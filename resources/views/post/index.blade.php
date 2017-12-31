@@ -19,7 +19,7 @@
 					<a href="product_details.html"><img src="{{url('/storage/'.$product->image)}}" alt=""></a>
 					<div class="caption">
 					  <h5>{{$product->name}}</h5>
-					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">Rp {{$product->price}}</span></h4>
+					  <h4><a class="btn" href="{{ url('/product_details')}}">VIEW</a> <span class="pull-right">Rp {{$product->price}}</span></h4>
 					</div>
 				  </div>
 				</li>

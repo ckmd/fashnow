@@ -12,9 +12,10 @@ class ProductsController extends Controller
       return view('post.index',['products'=>$products]);//products paling kiri merupakan nama file blade.php
     }
 
-    public function showDetail()
+    public function showDetail($id)
     {
-      return view('post.product_details');
+      $product = Inventory::find($id);
+      return view('post.product_details',['product'=>$product]);
     }
 
     public function showPerCategories()

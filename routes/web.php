@@ -19,9 +19,8 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/product_summary','BuysController@showKeranjang');
-Route::get('/product_details','ProductsController@showDetail');
+Route::get('/{id}','ProductsController@showDetail');
 Route::get('/home', 'HomeController@index');
-Route::get('/home/{id}', 'HomeController@show');
 Route::post('/products','ProductsController@showPerCategories');
 
 Route::get('/products', function()

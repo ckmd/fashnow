@@ -29,13 +29,13 @@
 		<form class="form-inline navbar-search" method="post" action="{{ url('/products') }}" >
 		<input id="srchFld" class="srchTxt" type="text" />
         {{ csrf_field() }}
-          <select class="srchTxt">
-			<option>Atasan Wanita </option>
-			<option>Bawahan Wanita </option>
-			<option>Aksesoris Wanita </option>
-			<option>Atasan Pria </option>
-			<option>Bawahan Pria </option>
-			<option>Aksesoris Pria </option>
+          <select class="srchTxt" name="category">
+			<option value="Atasan Wanita">Atasan Wanita </option>
+			<option value="Bawahan Wanita">Bawahan Wanita </option>
+			<option value="Aksesoris Wanita">Aksesoris Wanita </option>
+			<option value="Atasan Pria">Atasan Pria </option>
+			<option value="Bawahan Pria">Bawahan Pria </option>
+			<option value="Aksesoris Pria">Aksesoris Pria </option>
 		</select> 
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>

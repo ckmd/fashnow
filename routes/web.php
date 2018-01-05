@@ -22,6 +22,7 @@ Route::get('/product_summary','BuysController@showKeranjang');
 Route::get('/{id}','ProductsController@showDetail');
 Route::get('/home', 'HomeController@index');
 Route::post('/products','ProductsController@showPerCategories');
+Route::post('/category','ProductsController@showPerCategories');
 
 Route::get('/products', function()
 {

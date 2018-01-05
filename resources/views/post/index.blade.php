@@ -12,52 +12,22 @@
 			  <div class="item active">
 			  <ul class="thumbnails">
 					@foreach($products as $product)
-					@if($product->id <= 5)
+					@for($i = 0; $i <= count($product) ; $i++)
+					@if($i % 4 == 0)
 				<li class="span3">
 				  <div class="thumbnail">
 				  <i class="tag"></i>
 					<a href="product_details.html"><img src="{{url('/storage/'.$product->image)}}" alt=""></a>
 					<div class="caption">
 					  <h5>{{$product->name}}</h5>
-					  <h4><a class="btn" href="{{ url('/product_details')}}">VIEW</a> <span class="pull-right">Rp {{$product->price}}</span></h4>
+					  <h4><a class="btn" href="{{$product->id}}">VIEW</a> <span class="pull-right">Rp {{$product->price}}</span></h4>
 					</div>
 				  </div>
 				</li>
 						@endif
+						@endfor
 						@endforeach
 			</ul>
-					<!--
-				<li class="span3">
-				  <div class="thumbnail">
-				  <i class="tag"></i>
-					<a href="product_details.html"><img src="themes/images/products/b2.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Product name</h5>
-					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <i class="tag"></i>
-					<a href="product_details.html"><img src="themes/images/products/b3.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Product name</h5>
-					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <i class="tag"></i>
-					<a href="product_details.html"><img src="themes/images/products/b4.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Product name</h5>
-					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-			</ul>-->
 			</div>
 			   <div class="item">
 			  <ul class="thumbnails">

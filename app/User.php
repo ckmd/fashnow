@@ -26,4 +26,9 @@ class User extends \TCG\Voyager\Models\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function carts()
+    {
+      return $this->hasMany(Cart::class);
+    }
 }

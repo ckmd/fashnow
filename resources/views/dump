@@ -1,0 +1,16 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HOME</title>
+  </head>
+  <body>
+    <ul>
+      <li>{{$item->id}}</li>
+      <li>{{$item->name}}</li>
+      <li><img src="{{url('/storage/'.$item->image)}}"></li>
+      <li>{{$item->price}}</li>
+    </ul>
+
+  </body>
+</html> -->

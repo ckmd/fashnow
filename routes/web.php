@@ -28,3 +28,6 @@ Route::get('/products', function()
 {
     return View::make('post.products');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

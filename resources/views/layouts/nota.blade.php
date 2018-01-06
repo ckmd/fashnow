@@ -1,13 +1,17 @@
-<table class="table table-bordered">
-              <thead>
+<div align="center">
+  <h2>Logo Fashnow</h2>
+  <hr>
+</div>
+<table class="table table-bordered" border="1" align="center">
+              <thead align="center">
                 <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-                  <th>Quantity</th>
-				  <th>Price</th>
-                  <th>Tax</th>
-                  <th>Total</th>
-				</tr>
+                  <th scope="col">Product id</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Quantity</th>
+				          <th scope="col">Price</th>
+                  <th scope="col">Tax</th>
+                  <th scope="col">Total</th>
+				        </tr>
               </thead>
               <tbody>
               @php($totalTax = 0)
@@ -16,30 +20,54 @@
               @foreach( Auth::user()->carts as $cart )
               @php( $inventory = $cart->inventory )
                   <tr>
-                    <td> <img width="60" src="{{url('/storage/'.$inventory->image)}}" alt=""/></td>
+                    <th align="center" scope="row">{{ $inventory->id }}</th>
                     <td>{{ $inventory->name }}</td>
-                    <td>{{ $cart->quantity }}
-                    </td>
-                    <td>Rp {{ $inventory->price*$cart->quantity }}</td>
-                    <td>RP {{ $inventory->price*$cart->quantity*10/100}}</td>
-                    <td>Rp {{ $inventory->price*$cart->quantity + $cart->inventory->price*$cart->quantity*10/100 }}</td>
+                    <td align="center">{{ $cart->quantity }}</td>
+                    <td> Rp {{ $inventory->price*$cart->quantity }}</td>
+                    <td> Rp {{ $inventory->price*$cart->quantity*10/100}}</td>
+                    <td> Rp {{ $inventory->price*$cart->quantity + $cart->inventory->price*$cart->quantity*10/100 }}</td>
                   </tr>
                   @php($totalPrice += $inventory->price*$cart->quantity)
                   @php($totalTax += $inventory->price*$cart->quantity*10/100)
                   @php($totalPriceTax += $inventory->price*$cart->quantity + $cart->inventory->price*$cart->quantity*10/100)
               @endforeach
-
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
                  <tr>
-                  <td colspan="5" style="text-align:right">Total Harga </td>
-                  <td> {{$totalPrice}}</td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                  <td>Total Harga </td>
+                  <td> Rp {{$totalPrice}}</td>
                 </tr>
                 <tr>
-                 <td colspan="5" style="text-align:right">Total Tax </td>
-                 <td> {{$totalTax}}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                 <td>Total Tax </td>
+                 <td> Rp {{$totalTax}}</td>
                </tr>
 				        <tr>
-                  <td colspan="5" style="text-align:right"><strong>TOTAL BAYAR</strong></td>
-                  <td class="label label-important" style="display:block"> <strong>Rp {{ $totalPriceTax }} </strong></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><b>TOTAL BAYAR</b></td>
+                  <td><b> Rp {{ $totalPriceTax }} </b></td>
                 </tr>
 				</tbody>
-            </table>
+    </table>
+    <div align="center">
+      <h2>Fashnow</h2>
+      <h3>Toko online terpercaya</h3>
+      <h4>dicetak pada {{ date('Y-m-d H:i:s') }} waktu server</h3>
+        <h4>Terima kasih atas pembelian anda<br>kami tunggu pembelian berikutnya</h4>
+    </div>

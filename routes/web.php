@@ -17,7 +17,7 @@ Route::get('/', 'ProductsController@index');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+Route::get('/printNota','BuysController@printNota');
 Route::get('/product_summary','BuysController@showKeranjang');
 Route::get('/products/{id}','ProductsController@showDetail');
 Route::post('/products/{id}','ProductsController@calculate');

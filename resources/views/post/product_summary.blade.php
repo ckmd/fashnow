@@ -42,7 +42,14 @@
 		  </td>
 		  </tr>
 	</table>
-		@include('layouts.error')
+		
+	<div class="form-group">
+    <div class="alert alert-danger">
+        <ul>
+            <li>Silahkan Login Terlebih Dahulu</li>
+        </ul>
+    </div>
+</div>
 	@else
 		@include('layouts.cart')
 	@endguest

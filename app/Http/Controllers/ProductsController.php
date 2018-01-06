@@ -19,8 +19,11 @@ class ProductsController extends Controller
       return view('post.product_details',['product'=>$product]);
     }
 
-    public function calculate($id)
+    public function calculate()
     {
+      $id = request('inventory_id');
+
+      $product = Inventory::find($id);
       if (request('quantity') >= 0 && request()->has('quantity') && $product->stock - request('quantity') >= 0){
         $quantity = request('quantity');
         $user_id = request('user_id');
@@ -33,10 +36,23 @@ class ProductsController extends Controller
         $cart->save();
         $product->stock -= request('quantity');
         $product->save();
+        $errors = [
+          'id' => 0,
+          'message' => ''
+        ];
+      }else{
+        $errors = [
+          'id' => 1,
+          'message' => 'Stok tidak cukup !!'
+        ];
       }
-      //
-      //   $quantity = count($product->id);
-      //    $product->quantity -= $quantity;
+      
+      $data = [
+        'product' => $product,
+        'error' => $errors
+      ];
+
+      return json_encode($data);
       // return view('post.product_details',['product'=>$product]);
     }
 

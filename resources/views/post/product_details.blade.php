@@ -21,11 +21,13 @@
 			<div class="span6">
 				<h3>{{$product->name}}</h3>
 				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm">
+				<form class="form-horizontal qtyFrm" action="">
+					{{ csrf_field() }}
 				  <div class="control-group">
 					<label class="control-label"><span>Rp {{$product->price}}</span></label>
 					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty."/>
+						<input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
+					<input type="number" class="span1" placeholder="Qty." name="quantity"/>
 					  <button type="submit" class="btn btn-large btn-primary pull-right"> Tambahkan ke Keranjang <i class=" icon-shopping-cart"></i></button>
 					</div>
 				  </div>
@@ -36,11 +38,10 @@
 				<hr class="soft clr"/>
 				<p>{{$product->detail}}</p>
 			</div>
-          </div>
+    </div>
 	</div>
 </div>
 </div>
 </div>
 <!-- MainBody End ============================= -->
-
 @endsection

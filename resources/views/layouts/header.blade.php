@@ -26,9 +26,10 @@
   <div class="navbar-inner">
   	<!--logo-->
     <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
-		<form class="form-inline navbar-search" method="post" action="{{ url('/products') }}" >
+		<form class="form-inline navbar-search" method="GET" action="/category" >
+		{{ csrf_field() }}
 		<input id="srchFld" class="srchTxt" type="text" />
-        {{ csrf_field() }}
+        
           <select class="srchTxt" name="category">
 			<option value="Atasan Wanita">Atasan Wanita </option>
 			<option value="Bawahan Wanita">Bawahan Wanita </option>
@@ -61,7 +62,11 @@
 
 </div>
 <div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		@guest
+			<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		@else {{ count(Auth::user()->carts) }}
+		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		@endguest
 		
 		
 			  </div>

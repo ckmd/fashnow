@@ -11,11 +11,11 @@
         <h1>Transaksi sukses</h1>
       </td>
     </tr>
-    <tr align="center">
-      <td> <a href="#">cetak nota</a> </td>
+    <tr align="center" >
+      <td> <a href="#" class="btn btn-large btn-warning pull-right">cetak nota</a> </td>
     </tr>
-    <tr align="center">
-      <td> <a href="/">belanja lagi</a> </td>
+    <tr align="center" >
+      <td> <a href="/" class="btn btn-large btn-danger pull-left">belanja lagi</a> </td>
     </tr>
   </table>
 @endsection

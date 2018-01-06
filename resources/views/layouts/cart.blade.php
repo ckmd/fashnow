@@ -33,7 +33,7 @@
                   @php($totalTax += $inventory->price*$cart->quantity*10/100)
                   @php($totalPrice += $inventory->price*$cart->quantity - $cart->inventory->price*$cart->quantity*10/100)
               @endforeach
-				
+
 				 <tr>
                 </tr>
                  <tr>

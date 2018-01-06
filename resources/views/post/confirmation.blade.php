@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 	<div class="span9">
     <h3>Konfirmasi belanjaan anda</h3>
@@ -18,7 +17,6 @@
 		<button type="submit" name="submit" class="btn btn-large pull-right btn-primary">Bayar dan Lihat Nota <i class="icon-arrow-right"></i></a>
 	</form>
 	</div>
-
 </div>
 </div></div>
 </div>

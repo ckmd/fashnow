@@ -11,16 +11,20 @@ class ProductsController extends Controller
     public function index(){
       $products = Inventory::all();
       return view('post.index',['products'=>$products]);//products paling kiri merupakan nama file blade.php
-    }
+     }
 
     public function showDetail($id)
     {
     $product = Inventory::find($id);
     if (request('quantity') >= 0 && request()->has('quantity') && $product->stock - request('quantity') >= 0){
-      $cart = new Cart;
-      $cart->inventory_id = $id;
-      $cart->quantity = request('quantity');
-      $cart->user_id = request('user_id');
+      $quantity = request('quantity');
+      $user_id = request('user_id');
+
+      $cart = Cart::firstOrNew([
+        'user_id' => $user_id,
+        'inventory_id' => $id
+      ]);
+      $cart->quantity += request('quantity');
       $cart->save();
       $product->stock -= request('quantity');
       $product->save();

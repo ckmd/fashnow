@@ -16,7 +16,7 @@
               @php( $inventory = $cart->inventory )
                   <tr>
                     <td> <img width="60" src="{{url('/storage/'.$inventory->image)}}" alt=""/></td>
-                    <td>{{ $inventory->name }}<br/>{{ $inventory->detail }}</td>
+                    <td><strong><a href="/products/{{ $inventory->id }}" >{{ $inventory->name }}</a></strong><br/>{{ $inventory->detail }}</td>
                     <td>
                     <div class="input-append"><input class="span1" style="max-width:34px" placeholder="{{ $cart->quantity }}" value="{{ $cart->quantity }}" id="appendedInputButtons" size="16" type="text">
                     <button class="btn" type="button">
@@ -33,7 +33,7 @@
                   @php($totalTax += $inventory->price*$cart->quantity*10/100)
                   @php($totalPrice += $inventory->price*$cart->quantity - $cart->inventory->price*$cart->quantity*10/100)
               @endforeach
-				
+
 				 <tr>
                 </tr>
                  <tr>

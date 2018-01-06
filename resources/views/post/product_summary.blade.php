@@ -7,13 +7,13 @@
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
 		<li class="active"> SHOPPING CART</li>
     </ul>
-	<h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="products.html" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>	
+	<h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="products.html" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>
 	<hr class="soft"/>
-	
+
 	@guest
 	<table class="table table-bordered">
 		<tr><th> I AM ALREADY REGISTERED  </th></tr>
-		 <tr> 
+		 <tr>
 		 <td>
 			<form class="form-horizontal">
 				<div class="control-group">
@@ -41,19 +41,19 @@
 			</form>
 		  </td>
 		  </tr>
-	</table>		
+	</table>
 		@include('layouts.error')
 	@else
-		@include('layouts.cart')	
+		@include('layouts.cart')
 	@endguest
-    
+
 	<a href="{{ url('/products') }}" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
-	<a href="login.html" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
-	
+	<a href="{{ url('/confirmation')}}" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+
 </div>
 </div></div>
 </div>
 <!-- MainBody End ============================= -->
 
-	
+
 @endsection

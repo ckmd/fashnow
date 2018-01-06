@@ -14,14 +14,14 @@
 	-->
 	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
 	<script src="themes/js/less.js" type="text/javascript"></script> -->
-	
-<!-- Bootstrap style --> 
+
+<!-- Bootstrap style -->
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
-    <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
-<!-- Bootstrap style responsive -->	
+    <link href="css/base.css" rel="stylesheet" media="screen"/>
+<!-- Bootstrap style responsive -->
 	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
 	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
-<!-- Google-code-prettify -->	
+<!-- Google-code-prettify -->
 	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
 <!-- fav and touch icons -->
     <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
@@ -50,10 +50,10 @@
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
-	
+
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-	
+
 	<!-- Themes switcher section ============================================================================================= -->
 <div id="secectionBox">
     @include('layouts.themeswitch')

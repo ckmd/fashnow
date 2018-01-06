@@ -4,11 +4,11 @@
 		<div class="span6">Silahkan Login </div>
 	@else
 		<div class="span6">Hai !<strong> {{Auth::user()->name}} </strong></div>
-	
+
 	<div align="right"><a href="{{ route('logout') }}"
 	onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
 	 class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Log out</span></a>
-	 
+
 	 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -36,7 +36,7 @@
 			<option>Atasan Pria </option>
 			<option>Bawahan Pria </option>
 			<option>Aksesoris Pria </option>
-		</select> 
+		</select>
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
@@ -58,15 +58,15 @@
     </ul>
   </div>
 </div>
-
 </div>
+	@if(\Request::is('succeess'))
+	@else
 <div id="sidebar" class="span3">
 		@guest
 			<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
 		@else {{ count(Auth::user()->carts) }}
 		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
 		@endguest
-		
-		
-			  </div>
+	@endif
+</div>
 </div>

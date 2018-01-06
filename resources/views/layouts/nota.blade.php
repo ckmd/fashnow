@@ -18,8 +18,7 @@
                   <tr>
                     <td> <img width="60" src="{{url('/storage/'.$inventory->image)}}" alt=""/></td>
                     <td>{{ $inventory->name }}</td>
-                    <td>
-                    <div class="input-append"><input class="span1" style="max-width:34px" placeholder="{{ $cart->quantity }}" value="{{ $cart->quantity }}" id="appendedInputButtons" size="16" type="text">
+                    <td>{{ $cart->quantity }}
                     </td>
                     <td>Rp {{ $inventory->price*$cart->quantity }}</td>
                     <td>RP {{ $inventory->price*$cart->quantity*10/100}}</td>

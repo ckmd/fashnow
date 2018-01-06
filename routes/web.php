@@ -24,6 +24,8 @@ Route::post('/products/{id}','ProductsController@calculate');
 Route::get('/confirmation','BuysController@confirmation');
 //Route::get('/home', 'HomeController@index');
 Route::post('/products','ProductsController@showPerCategories');
+Route::post('/success','BuysController@prosesTransaksi');
+
 Route::get('/products', function()
 {
     return View::make('post.products');

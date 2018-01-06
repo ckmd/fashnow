@@ -25,7 +25,7 @@
 </a>
   <div class="navbar-inner">
   	<!--logo-->
-    <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
+    <a class="brand" href="{{ url('/')}}"><img src="/themes/images/logo.png" alt="Bootsshop"/></a>
 		<form class="form-inline navbar-search" method="post" action="{{ url('/products') }}" >
 		<input id="srchFld" class="srchTxt" type="text" />
         {{ csrf_field() }}
@@ -41,7 +41,7 @@
     </form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class="">
-	 <a href="{{ url('/product_summary')}}"><span class="btn btn-large btn-primary"><i class="icon-shopping-cart icon-white"></i> Keranjang</span> </a>
+	 <a href="/product_summary"><span class="btn btn-large btn-primary"><i class="icon-shopping-cart icon-white"></i> Keranjang</span> </a>
 	 @guest
 	 <li class="">
 	 <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Masuk</span></a></li>
@@ -62,9 +62,9 @@
 </div>
 <div id="sidebar" class="span3">
 		@guest
-			<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
-		@else {{ count(Auth::user()->carts) }}
-		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+			<div class="well well-small"><a id="myCart" href="/product_summary"><img src="/themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		@else
+		<div class="well well-small"><a id="myCart" href="/product_summary"><img src="/themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
 		@endguest
 		
 		

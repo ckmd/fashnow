@@ -17,10 +17,14 @@ class ProductsController extends Controller
     {
     $product = Inventory::find($id);
     if (request('quantity') >= 0 && request()->has('quantity') && $product->stock - request('quantity') >= 0){
-      $cart = new Cart;
-      $cart->inventory_id = $id;
-      $cart->quantity = request('quantity');
-      $cart->user_id = request('user_id');
+      $quantity = request('quantity');
+      $user_id = request('user_id');
+
+      $cart = Cart::firstOrNew([
+        'user_id' => $user_id,
+        'inventory_id' => $id
+      ]);
+      $cart->quantity += request('quantity');
       $cart->save();
       $product->stock -= request('quantity');
       $product->save();

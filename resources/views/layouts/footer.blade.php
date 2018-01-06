@@ -13,13 +13,13 @@
     </li>
     <li class="">
     	<a>Temukan kami di </a>
-    </li>
+    </li
 	 <li class="">
-		<a href="#"><img width="30" height="30" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a></li>
+		<a href="#"><img width="30" height="30" src="/themes/images/facebook.png" title="facebook" alt="facebook"/></a></li>
 	<li class="">
-		<a href="#"><img width="30" height="30" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a></li>
+		<a href="#"><img width="30" height="30" src="/themes/images/twitter.png" title="twitter" alt="twitter"/></a></li>
 	<li class="">
-		<a href="#"><img width="30" height="30" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a></li>
+		<a href="#"><img width="30" height="30" src="/themes/images/youtube.png" title="youtube" alt="youtube"/></a></li>
     </ul>
   </div>
 </div>

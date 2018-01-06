@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 Route::get('/printNota','BuysController@printNota');
 Route::get('/product_summary','BuysController@showKeranjang');
+Route::get('/category','ProductsController@showPerCategories');
 Route::get('/products/{id}','ProductsController@showDetail');
 Route::post('/products/{id}','ProductsController@calculate');
 Route::get('/confirmation','BuysController@confirmation');

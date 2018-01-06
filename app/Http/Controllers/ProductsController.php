@@ -35,7 +35,7 @@ class ProductsController extends Controller
 
     public function calculate($id)
     {
-      dd(request());
+      // dd(request());
       //
       //   $quantity = count($product->id);
       //    $product->quantity -= $quantity;
@@ -44,6 +44,11 @@ class ProductsController extends Controller
 
     public function showPerCategories()
     {
-      return view('post.products');
+      // dd(request('category'));
+      $category = request('category');
+      $products = Inventory::where('category',$category)->get();
+      // dd($products);
+      return view('post.products',['products' => $products]);
     }
+
 }

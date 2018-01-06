@@ -9,8 +9,8 @@
 	@endguest
 
 	<div class="form-group">
-	
-	<form method="post" action={{ url('/success')}}>
+
+	<form method="post" action={{ url('/succeess')}}>
 		{{ csrf_field() }}
 		<a href="{{ url('/products') }}" class="btn btn-large btn-danger"><i class="icon-arrow-left"></i> Lanjutkan Belanja </a>
 		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>

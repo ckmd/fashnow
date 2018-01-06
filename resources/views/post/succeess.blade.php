@@ -12,7 +12,7 @@
       </td>
     </tr>
     <tr align="center" >
-      <td> <a href="#" class="btn btn-large btn-warning pull-right">cetak nota</a> </td>
+      <td> <a href="/printNota" class="btn btn-large btn-warning pull-right">Cetak Nota</a> </td>
     </tr>
     <tr align="center" >
       <td> <a href="/" class="btn btn-large btn-danger pull-left">belanja lagi</a> </td>

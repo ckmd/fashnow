@@ -42,6 +42,11 @@ class ProductsController extends Controller
 
     public function showPerCategories()
     {
-      return view('post.products');
+      // dd(request('category'));
+      $category = request('category');
+      $products = Inventory::where('category',$category)->get();
+      // dd($products);
+      return view('post.products',['products' => $products]);
     }
+
 }

@@ -17,17 +17,15 @@ Route::get('/', 'ProductsController@index');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+Route::get('/printNota','BuysController@printNota');
 Route::get('/product_summary','BuysController@showKeranjang');
+Route::get('/category','ProductsController@showPerCategories');
 Route::get('/products/{id}','ProductsController@showDetail');
 Route::post('/products/{id}','ProductsController@calculate');
 Route::get('/confirmation','BuysController@confirmation');
-Route::get('/succeess',function(){
-  return view('post.succeess');
-});
 //Route::get('/home', 'HomeController@index');
 Route::post('/products','ProductsController@showPerCategories');
-Route::post('/success','BuysController@prosesTransaksi');
+Route::post('/succeess','BuysController@prosesTransaksi');
 
 Route::get('/products', function()
 {

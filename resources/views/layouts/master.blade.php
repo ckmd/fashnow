@@ -51,6 +51,13 @@
 	<script src="/themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="/themes/js/google-code-prettify/prettify.js"></script>
 
+    <!-- Library Untuk menambahkan sebuah fungsi ajax -->
+    <script type="text/javascript" src="/js/toastr.min.js"></script>
+    <script src="/js/validator.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.twbsPagination.min.js"></script>
+    <script src="/js/validator.min.js"></script>
+    <script src="/js/item-ajax.js"></script>
+
 	<script src="/themes/js/bootshop.js"></script>
     <script src="/themes/js/jquery.lightbox-0.5.js"></script>
 

@@ -21,7 +21,7 @@
 			<div class="span6">
 				<h3>{{$product->name}}</h3>
 				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm" action="">
+				<form class="form-horizontal qtyFrm" action="" method="POST">
 					{{ csrf_field() }}
 				  <div class="control-group">
 					<label class="control-label"><span>Rp {{$product->price}}</span></label>
@@ -40,7 +40,9 @@
 			</div>
     </div>
 	</div>
+	
 </div>
+@include('layouts.error')
 </div>
 </div>
 <!-- MainBody End ============================= -->

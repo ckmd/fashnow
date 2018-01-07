@@ -18,8 +18,6 @@ class BuysController extends Controller
     }
 
     public function printNota(){
-      File::put('nota.html',view('layouts.nota')->render());
-
       return redirect('/dompdf.php');
     }
 
@@ -27,6 +25,8 @@ class BuysController extends Controller
     {
       $user = User::find(request('user_id'));
       
+      File::put('nota.html',view('layouts.nota')->render());
+
       foreach($user->carts as $cart)
       {
         $history = new History;
@@ -37,6 +37,7 @@ class BuysController extends Controller
         $history->save();
       }
       $user->carts()->delete();
+
       return view('post.succeess');
     }
 }

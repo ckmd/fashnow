@@ -21,20 +21,28 @@
 			<div class="span6">
 				<h3>{{$product->name}}</h3>
 				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm" action="" method="POST">
+				<div id="form-group">
+				<form class="form-horizontal qtyFrm" action="/products/{{$product->id}}" method="POST">
 					{{ csrf_field() }}
 				  <div class="control-group">
 					<label class="control-label"><span>Rp {{$product->price}}</span></label>
 					<div class="controls">
 					<input type="number" class="span1" placeholder="Qty." name="quantity"/>
+					@guest
+					<a href="/product_summary" type="submit" class="btn btn-large btn-primary pull-right"> Tambahkan ke Keranjang <i class=" icon-shopping-cart"></i></a>
+					@else
 					<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
-					  <button type="submit" class="btn btn-large btn-primary pull-right"> Tambahkan ke Keranjang <i class=" icon-shopping-cart"></i></button>
+					<input type="hidden" name="inventory_id" value="{{$product->id}}"/>
+					<button type="submit" class="btn btn-large btn-primary pull-right re-stock"> Tambahkan ke Keranjang <i class=" icon-shopping-cart"></i></button>
+					@endguest
+					  
 					</div>
 				  </div>
 				</form>
+				</div>
 
 				<hr class="soft"/>
-				<h4>{{$product->stock}} item dalam stock</h4>
+				<h4 id="product-stock">{{$product->stock}} item dalam stock</h4>
 				<hr class="soft clr"/>
 				<p>{{$product->detail}}</p>
 			</div>

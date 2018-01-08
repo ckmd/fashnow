@@ -1,7 +1,4 @@
-<div align="center">
-  <h2>Logo Fashnow</h2>
-  <hr>
-</div>
+  <center><img src="themes/images/logofashnow.png" height="100" width="400" /></center>
 <table class="table table-bordered" border="1" align="center">
               <thead align="center">
                 <tr>

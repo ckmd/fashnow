@@ -26,7 +26,7 @@ Route::get('/confirmation','BuysController@confirmation');
 //Route::get('/home', 'HomeController@index');
 Route::get('/products','ProductsController@showProducts');
 Route::post('/succeess','BuysController@prosesTransaksi');
-
+Route::get('/profil','UsersController@index');
 // Route::get('/products', function()
 // {
 //     return View::make('post.products');

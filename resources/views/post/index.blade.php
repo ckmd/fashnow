@@ -42,20 +42,30 @@
 		</div>
 		<h4>Produk Terbaru </h4>
 			  <ul class="thumbnails">
-					@for ($i=count($products) - 1;$i=count($products) - 4;$i--)
+					<script>
+						var products_length = {{count($products)}};
+					</script>
+					@for ($i=count($products) - 1;$i>count($products) - 4;$i--)
+					@php($product = $products[$i])
 				<li class="span3">
-				  <div class="thumbnail">
-					<a  href="product_details.html"><img src="themes/images/products/9.jpg" alt=""/></a>
+				  <div class="thumbnail product-id" id="product_id{{$i}}" name="{{$product->id}}">
+					<a  href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 					<div class="caption">
-					  <h5>Product name</h5>
+					  <h5>{{$product->name}}</h5>
 					  <p>
-						Lorem Ipsum is simply dummy text.
+							{{$product->detail}}
 					  </p>
-					  <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+					  <h4 style="text-align:center">
+							<a class="btn" href="product_details.html"> 
+								<i class="icon-zoom-in"></i></a> 
+								<a class="btn tambah-keranjang{{$i}}" href="#">Add to 
+									<i class="icon-shopping-cart"></i></a> 
+									<a class="btn btn-primary" href="#">{{$product->price}}</a></h4>
+						<h5>{{$product->created_at->diffForHumans()}}</h5>
 					</div>
 				  </div>
 				</li>
-					@endfor
+				@endfor
 			  </ul>
 		</div>
 		</div>

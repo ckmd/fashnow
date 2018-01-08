@@ -78,7 +78,7 @@
 			  <div class="thumbnail product-id" id="product_id{{$i}}" name="{{$product->id}}">
 				<a href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 				<div class="caption">
-				  <a href="/products/{{$product->id}}"<h5>{{ $product->name }}</h5></a>
+				  <a href="/products/{{$product->id}}"><h5>{{ $product->name }}</h5></a>
 				  <p> 
 					{{ $product->detai}} 
 				  </p>
@@ -86,8 +86,8 @@
 						 <a class="btn" href="">
 						 <i class="icon-zoom-in"></i></a> 
 						 <a class="btn tambah-keranjang{{$i}}" href="#">Add to
-								<i class="icon-shopping-cart"></i></a>
-								<a class="btn btn-primary" href="#">Rp ; {{$product->price}}</a>
+								<i class="icon-shopping-cart"></i></a><br>
+								<a class="btn btn-primary" href="#">Rp ;{{$product->price}}</a>
 					</h4>
 				</div>
 			  </div>

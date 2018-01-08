@@ -27,11 +27,11 @@
                     </td>
                     <td>Rp {{ $inventory->price*$cart->quantity }}</td>
                     <td>RP {{ $inventory->price*$cart->quantity*10/100}}</td>
-                    <td>Rp {{ $inventory->price*$cart->quantity - $cart->inventory->price*$cart->quantity*10/100 }}</td>
+                    <td>Rp {{ $inventory->price*$cart->quantity + $cart->inventory->price*$cart->quantity*10/100 }}</td>
                   </tr>
 
                   @php($totalTax += $inventory->price*$cart->quantity*10/100)
-                  @php($totalPrice += $inventory->price*$cart->quantity - $cart->inventory->price*$cart->quantity*10/100)
+                  @php($totalPrice += $inventory->price*$cart->quantity + $cart->inventory->price*$cart->quantity*10/100)
               @endforeach
 
 				 <tr>

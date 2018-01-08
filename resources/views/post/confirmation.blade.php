@@ -2,6 +2,7 @@
 @section('content')
 	<div class="span9">
     <h3>Konfirmasi belanjaan anda</h3>
+    		
 	@guest
 		@include('layouts.error')
 	@else

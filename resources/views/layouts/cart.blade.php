@@ -3,7 +3,7 @@
                 <tr>
                   <th>Product</th>
                   <th>Description</th>
-                  <th>Quantity/Update</th>
+                  <th>Quantity</th>
 				  <th>Price</th>
                   <th>Tax</th>
                   <th>Total</th>
@@ -19,11 +19,8 @@
                     <td><strong><a href="/products/{{ $inventory->id }}" >{{ $inventory->name }}</a></strong><br/>{{ $inventory->detail }}</td>
                     <td>
                     <div class="input-append"><input class="span1" style="max-width:34px" placeholder="{{ $cart->quantity }}" value="{{ $cart->quantity }}" id="appendedInputButtons" size="16" type="text">
-                    <button class="btn" type="button">
 
-                    <i class="icon-minus"></i></button>
-                    <button class="btn" type="button">
-                    <i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
+                  <button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
                     </td>
                     <td>Rp {{ $inventory->price*$cart->quantity }}</td>
                     <td>RP {{ $inventory->price*$cart->quantity*10/100}}</td>

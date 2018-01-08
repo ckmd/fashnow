@@ -92,5 +92,7 @@ $( document ).ready(function() {
     for (var i =0 ; i < products_length;i++) {
         funcs[i]();
     }
+
+    
     
 });

@@ -65,6 +65,8 @@
                 </tr>
 				</tbody>
     </table>
+    $php(session_start())
+    @php($_session['total'] = $totalPrice)
     <div align="center">
       <h2>Fashnow</h2>
       <h3>Toko online terpercaya</h3>

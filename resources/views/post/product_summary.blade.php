@@ -5,9 +5,9 @@
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active"> SHOPPING CART</li>
+		<li class="active"> Keranjang</li>
     </ul>
-	<h3>  SHOPPING CART [ <small>3 Item(s) </small>]</h3>
+	<h3>  Keranjang </h3>
 	<hr class="soft"/>
 
 	@guest

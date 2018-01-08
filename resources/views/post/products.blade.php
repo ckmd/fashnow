@@ -6,9 +6,9 @@
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Products Name</li>
+		<li class="active">product</li>
     </ul>
-	<h3> Products Name <small class="pull-right"> 40 products are available </small></h3>
+	<h3> Products Name <small class="pull-right"> {{count($products)}} products are available </small></h3>
 	<hr class="soft"/>
 	<p>
 		Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies - that is why our goods are so popular and we have a great number of faithful customers all over the country.
@@ -34,7 +34,7 @@
 <div class="tab-content">
 	<div class="tab-pane" id="listView">
 		<div class="row">
-		@foreach($products as $product)	  
+		@foreach($products as $product)
 			<div class="span2">
 				<img src="{{url('/storage/'.$product->image)}}" alt=""/>
 			</div>

@@ -29,7 +29,7 @@
 		<form class="form-inline navbar-search" method="GET" action="/category" >
 		{{ csrf_field() }}
 		<input id="srchFld" class="srchTxt" type="text" />
-        
+
           <select class="srchTxt" name="category">
 			<option value="Atasan Wanita">Atasan Wanita </option>
 			<option value="Bawahan Wanita">Bawahan Wanita </option>
@@ -37,7 +37,7 @@
 			<option value="Atasan Pria">Atasan Pria </option>
 			<option value="Bawahan Pria">Bawahan Pria </option>
 			<option value="Aksesoris Pria">Aksesoris Pria </option>
-		</select> 
+		</select>
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
@@ -64,9 +64,9 @@
 	@else
 <div id="sidebar" class="span3">
 		@guest
-			<div class="well well-small"><a id="myCart" href="/product_summary"><img src="/themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+			<div class="well well-small"><img src="/themes/images/ico-cart.png" alt="cart"> 0 Items in your cart  <a id="myCart" href="/product_summary"> <span class="badge badge-warning pull-right">SHOW</span></a></div>
 		@else
-		<div class="well well-small"><a id="myCart" href="/product_summary"><img src="/themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+		<div class="well well-small"><img src="/themes/images/ico-cart.png" alt="cart"> {{ count(Auth::user()->carts) }} Items in your cart <a id="myCart" href="/product_summary"> <span class="badge badge-warning pull-right">SHOW</span></a></div>
 		@endguest
 	@endif
 </div>

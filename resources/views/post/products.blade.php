@@ -8,7 +8,7 @@
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
 		<li class="active">{{ request('category') }}</li>
     </ul>
-	<h3> {{ request('category') }} <small class="pull-right"> 40 products are available </small></h3>	
+	<h3> {{ request('category') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
 	<hr class="soft"/>
 	<p>
 		Fashnow merupakan sebuah Toko Fashion online yang memiliki Cabang dimana mana dan selurh harga di toko ini. Semuanya terjangkau
@@ -26,7 +26,7 @@
             </select>
 		</div>
 	  </form>
-	  
+
 <div id="myTab" class="pull-right">
  <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
  <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
@@ -35,12 +35,12 @@
 <div class="tab-content">
 	<div class="tab-pane" id="listView">
 		<div class="row">
-		@foreach($products as $product)	  
+		@foreach($products as $product)
 			<div class="span2">
 				<img src="{{url('/storage/'.$product->image)}}" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>New | Available</h3>				
+				<h3>New | Available</h3>
 				<hr class="soft"/>
 				<h5>{{ $product->name }}</h5>
 				<p>
@@ -55,10 +55,10 @@
 			<label class="checkbox">
 				<input type="checkbox">  Adds product to compair
 			</label><br/>
-			
+
 			  <a href="/products/{{$product->id}}" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
 			  <a href="/products/{{$product->id}}" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-			
+
 				</form>
 			</div>
 			@endforeach

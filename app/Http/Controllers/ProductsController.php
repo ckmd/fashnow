@@ -12,9 +12,13 @@ class ProductsController extends Controller
       $products = Inventory::all();
       return view('post.index',['products'=>$products]);//products paling kiri merupakan nama file blade.php
      }
+     public function showProducts(){
+       $products = Inventory::all();
+       return view('post.products',['products'=>$products]);
+     }
 
     public function showDetail($id)
-    {    
+    {
     $product = Inventory::find($id);
       return view('post.product_details',['product'=>$product]);
     }
@@ -27,7 +31,7 @@ class ProductsController extends Controller
       if (request('quantity') >= 0 && request()->has('quantity') && $product->stock - request('quantity') >= 0){
         $quantity = request('quantity');
         $user_id = request('user_id');
-  
+
         $cart = Cart::firstOrNew([
           'user_id' => $user_id,
           'inventory_id' => $id
@@ -46,7 +50,7 @@ class ProductsController extends Controller
           'message' => 'Stok tidak cukup !!'
         ];
       }
-      
+
       $data = [
         'product' => $product,
         'error' => $errors

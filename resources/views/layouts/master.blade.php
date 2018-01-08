@@ -45,10 +45,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/themes/images/ico/apple-touch-icon-57-precomposed.png">
     <script src="/js/item-ajax.js"></script>
-	<style type="text/css" id="enject"></style>
+    <style type="text/css" id="enject"></style>
   </head>
 <body>
 <div id="header">
+
+    @guest
+    @else
+    <script type="text/javascript">
+        var user_id = {{Auth::user()->id}}
+    </script>
+    @endguest
     @include('layouts.header')
 </div>
 

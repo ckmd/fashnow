@@ -6,12 +6,13 @@
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">product</li>
+		<li class="active">{{ request('category') }}</li>
     </ul>
-	<h3> Products Name <small class="pull-right"> {{count($products)}} products are available </small></h3>
+	<h3> {{ request('category') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
 	<hr class="soft"/>
 	<p>
-		Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies - that is why our goods are so popular and we have a great number of faithful customers all over the country.
+		Fashnow merupakan sebuah Toko Fashion online yang memiliki Cabang dimana mana dan selurh harga di toko ini. Semuanya terjangkau
+		Selalu kunjungi fashnow tiap harinya. Karena akan selalu diupdate.
 	</p>
 	<hr class="soft"/>
 	<form class="form-horizontal span6">
@@ -68,20 +69,30 @@
 
 	<div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
-			@foreach($products as $product)
+			<script>
+				var products_length = {{count($products)}}
+			</script>
+			@for ($i =0 ; $i<count($products) ; $i++ )
+			@php($product = $products[$i])
 			<li class="span3">
-			  <div class="thumbnail">
+			  <div class="thumbnail product-id" id="product_id{{$i}}" name="{{$product->id}}">
 				<a href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 				<div class="caption">
-				  <h5>{{ $product->name }}</h5>
-				  <p>
-					{{ $product->detai}}
+				  <a href="/products/{{$product->id}}"><h5>{{ $product->name }}</h5></a>
+				  <p> 
+					{{ $product->detai}} 
 				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="/products/{{$product->id}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				   <h4 style="text-align:center">
+						 <a class="btn" href="">
+						 <i class="icon-zoom-in"></i></a> 
+						 <a class="btn tambah-keranjang{{$i}}" href="#">Add to
+								<i class="icon-shopping-cart"></i></a><br>
+								<a class="btn btn-primary" href="#">Rp ;{{$product->price}}</a>
+					</h4>
 				</div>
 			  </div>
 			</li>
-			@endforeach
+			@endfor
 		  </ul>
 	<hr class="soft"/>
 	</div>

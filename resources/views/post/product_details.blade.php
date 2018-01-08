@@ -27,7 +27,14 @@
 				  <div class="control-group">
 					<label class="control-label"><span>Rp {{$product->price}}</span></label>
 					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty." name="quantity"/>
+					
+					<div class="input-append pull-left">
+					<input class="span1" name="quantity" style="max-width:34px" placeholder="0" value="0" id="popoa" size="16" type="number">
+                    <button class="btn" type="button" onclick="decrementQuantity()">
+                    <i class="icon-minus"></i></button>
+                    <button class="btn" type="button" onclick="incrementQuantity()">
+					<i class="icon-plus"></i></button>
+				</div>
 					@guest
 					<a href="/product_summary" type="submit" class="btn btn-large btn-primary pull-right"> Tambahkan ke Keranjang <i class=" icon-shopping-cart"></i></a>
 					@else
@@ -48,7 +55,24 @@
 			</div>
     </div>
 	</div>
-	
+	<script>
+		function decrementQuantity()
+    	{
+			var dec = document.getElementById("popoa").value;
+			if (dec <= 0)
+				dec = 0;
+			else
+				dec--;
+			document.getElementById("popoa").value = dec;
+    	}
+
+		function incrementQuantity()
+		{
+			var plus = document.getElementById("popoa").value;
+			plus++;
+			document.getElementById("popoa").value = plus;
+		}
+	</script>
 </div>
 @include('layouts.error')
 </div>

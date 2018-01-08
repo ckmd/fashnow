@@ -24,8 +24,8 @@ class BuysController extends Controller
     public function prosesTransaksi()
     {
       $user = User::find(request('user_id'));
-      
-      File::put('nota.html',view('layouts.nota')->render());
+      $id = $user->user_id;
+      File::put('nota'.(string)$id.'.html',view('layouts.nota')->render());
 
       foreach($user->carts as $cart)
       {

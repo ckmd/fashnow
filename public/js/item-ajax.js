@@ -101,29 +101,43 @@ $( document ).ready(function() {
         e.preventDefault();
 
         var form_action = $("#registerForm").find("form").attr("action");
-        var nama = $("#registerForm").find("input[name='name']").val();
+        var name = $("#registerForm").find("input[name='name']").val();
         var email = $("#registerForm").find("input[name='email']").val();;
         var address = $("#registerForm").find("input[name='address']").val();;
-        var telepon = $("#registerForm").find("input[name='phone']").val();;
+        var phone = $("#registerForm").find("input[name='phone']").val();;
         var password = $("#registerForm").find("input[name='password']").val();
-        var konfirmasipassword = $("#registerForm").find("input[name='password_confirmation']").val();
+        var password_confirmation = $("#registerForm").find("input[name='password_confirmation']").val();
 
         $.ajax({
             dataType: 'json',
             type: 'POST',
             url: form_action,
-            data:{nama,email, address, telepon, password, konfirmasipassword}
+            data:{name,email, address, phone, password, password_confirmation}
         }).done(function(data){
-            console.log('success');
+            toastr.success('Anda berhasil Daftar.', 'Berhasil', {timeOut: 5000});
+            location.reload();
         }).error(function(xhr){
-            var response = JSON.parse(xhr.responseText);
-            console.log(response.errors);
-            var htmerror = $("#errorsjs");
-            response.errors.forEach(function(error){
-                htmerror.innerHTML('a');
-            });
-            console.log(response);
+            console.log(xhr);
+            if (xhr.status == 200){
+                toastr.success('Anda berhasil Daftar.', 'Berhasil', {timeOut: 5000});
+                location.reload();
+            }else{
+                var response = JSON.parse(xhr.responseText);
+                var errors = response.errors;
+                var htmerror = $("#errorsjs");
+
+                /* looping jquery*/
+                htmerror.html('<ul></ul>');
+                $.each(errors, function() {
+                    $.each(this, function(k, v) {
+                    htmerror.append('<li>' + v + '</li>');
+                    });
+                });
+                console.log(response);
+            }
         });     
+        
     });
+    
 
 });

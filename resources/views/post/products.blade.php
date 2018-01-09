@@ -76,8 +76,9 @@
 				</form>
 			</div>
 			@endforeach
+			
 		</div>
-
+		
 		<hr class="soft"/>
 	</div>
 
@@ -94,7 +95,7 @@
 				<div class="caption">
 				  <a href="/products/{{$product->id}}"><h5>{{ $product->name }}</h5></a>
 				  <p> 
-					{{ $product->detai}} 
+					{{ $product->detail}} 
 				  </p>
 				   <h4 style="text-align:center">
 						 <a class="btn" href="">

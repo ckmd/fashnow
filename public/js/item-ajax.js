@@ -18,15 +18,20 @@ $( document ).ready(function() {
         header.html(data.stock + ' item dalam stock');
     }
 
+    /* MAIN function Tambah Stock*/
+
     /* Tombol tambah ke keranjang*/
     function loopingKeranjang(i){
         $(".tambah-keranjang"+i).click(function(e){
             e.preventDefault();
-
-            var inventory_id = $("#product_id"+i).attr("name");
-            var quantity = 1;
-            user_id;
-            tambahsatustock(inventory_id, quantity, user_id);
+            if (typeof user_id !== 'undefined'){
+                var inventory_id = $("#product_id"+i).attr("name");
+                var quantity = 1;
+                user_id;
+                tambahsatustock(inventory_id, quantity, user_id);
+            }else{
+                toastr.error('silahkan login terlebih dahulu', 'Belum login', {timeOut: 5000});
+            }
             
         });
     }
@@ -37,7 +42,7 @@ $( document ).ready(function() {
         $.ajax({
             dataType: 'json',
             type: 'POST',
-            url: url + '/products',
+            url: url + '/products/' + inventory_id,
             data:{inventory_id:inventory_id, quantity:quantity, user_id:user_id}
         }).done(function(data){
             console.log(data);
@@ -59,7 +64,7 @@ $( document ).ready(function() {
         var inventory_id = $("#form-group").find("input[name='inventory_id']").val();
         var quantity = $("#form-group").find("input[name='quantity']").val();
         var user_id = $("#form-group").find("input[name='user_id']").val();
-        
+
 
         if(inventory_id != '' && quantity != '' && user_id != ''){
             $.ajax({
@@ -91,8 +96,16 @@ $( document ).ready(function() {
     }
     for (var i =0 ; i < products_length;i++) {
         funcs[i]();
-    }
+    } 
 
-    
-    
+    function sudahLogin(user_id)
+    {
+        if (typeof user_id === 'undefined')
+        {
+            console.log('masuk');
+            toastr.error('silahkan login terlebih dahulu', 'Belum login', {timeOut: 5000});
+            return false;
+        }
+        return true;
+    }
 });

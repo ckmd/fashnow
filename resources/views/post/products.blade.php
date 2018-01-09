@@ -35,6 +35,8 @@
 <div class="tab-content">
 	<div class="tab-pane" id="listView">
 		<div class="row">
+			<script>
+			</script>
 		@foreach($products as $product)
 			<div class="span2">
 				<img src="{{url('/storage/'.$product->image)}}" alt=""/>
@@ -87,7 +89,7 @@
 						 <i class="icon-zoom-in"></i></a> 
 						 <a class="btn tambah-keranjang{{$i}}" href="#">Add to
 								<i class="icon-shopping-cart"></i></a><br>
-								<a class="btn btn-primary" href="#">Rp ;{{$product->price}}</a>
+								<a class="btn btn-primary" href="#">{{$product->price}}</a>
 					</h4>
 				</div>
 			  </div>

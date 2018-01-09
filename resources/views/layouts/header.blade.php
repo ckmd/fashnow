@@ -52,7 +52,7 @@
 	@include('auth.signup')
 	@else
 		<li class="">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="btn btn-large btn-warning">{{ Auth::user()->name }}</span></a></li>
+			<a href="/profil" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="btn btn-large btn-warning">{{ Auth::user()->name }}</span></a></li>
 		</li>
 	@endguest
 	</li>
@@ -60,7 +60,7 @@
   </div>
 </div>
 </div>
-	@if(\Request::is('succeess'))
+	@if(\Request::is('succeess') || \Request::is('profil'))
 	@else
 <div id="sidebar" class="span3">
 		@guest

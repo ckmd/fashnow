@@ -30,6 +30,7 @@ Route::get('/products','ProductsController@showProducts');
 Route::post('/succeess','BuysController@prosesTransaksi');
 Route::get('/profil','UsersController@index');
 Route::delete('/product_summary/{id}', 'CartsController@destroy');
+Route::get('/history','BuysController@history');
 // Route::get('/products', function()
 // {
 //     return View::make('post.products');

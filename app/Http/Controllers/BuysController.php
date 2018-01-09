@@ -44,5 +44,6 @@ class BuysController extends Controller
     public function history()
     {
       $history = History::all();
+      return view('post.history');
     }
 }

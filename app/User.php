@@ -32,6 +32,11 @@ class User extends \TCG\Voyager\Models\User
       return $this->hasMany(Cart::class);
     }
 
+    public function histories()
+    {
+      return $this->hasMany(History::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

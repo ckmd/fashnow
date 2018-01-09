@@ -21,7 +21,6 @@
 					@endif
 					<li class="span3">
 						<div class="thumbnail">
-							<i class="tag"></i>
 							<a href="product_details.html"><img src="{{url('/storage/'.$product->image)}}" alt=""></a>
 							<div class="caption">
 								<h5>{{$product->name}}</h5>
@@ -49,6 +48,7 @@
 					@php($product = $products[$i])
 				<li class="span3">
 				  <div class="thumbnail product-id" id="product_id{{$i}}" name="{{$product->id}}">
+							<i class="tag"></i>
 					<a  href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 					<div class="caption">
 					  <h5>{{$product->name}}</h5>
@@ -56,10 +56,10 @@
 							{{$product->detail}}
 					  </p>
 					  <h4 style="text-align:center">
-							<a class="btn" href="product_details.html"> 
-								<i class="icon-zoom-in"></i></a> 
-								<a class="btn tambah-keranjang{{$i}}" href="#">Add to 
-									<i class="icon-shopping-cart"></i></a> 
+							<a class="btn" href="product_details.html">
+								<i class="icon-zoom-in"></i></a>
+								<a class="btn tambah-keranjang{{$i}}" href="#">Add to
+									<i class="icon-shopping-cart"></i></a>
 									<a class="btn btn-primary" href="#">{{$product->price}}</a></h4>
 						<h5>{{$product->created_at->diffForHumans()}}</h5>
 					</div>

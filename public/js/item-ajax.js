@@ -120,7 +120,7 @@ $( document ).ready(function() {
             }else{
                 var response = JSON.parse(xhr.responseText);
                 var errors = response.errors;
-                var htmerror = $("#errorsjs");
+                var htmerror = $("#errorsjsLogin");
 
                 /* looping jquery*/
                 htmerror.html('<ul></ul>');

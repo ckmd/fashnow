@@ -35,6 +35,12 @@
 			  	</table>
 			  </div>
 			</form>
-				@include('layouts.errorjs')
+			<div class="form-group">
+    <div class="alert alert-danger" id="errorsjsLogin">
+      <ul>
+        
+      </ul>
+    </div>
+</div>
 		  </div>
 	</div>

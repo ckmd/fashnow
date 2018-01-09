@@ -23,9 +23,9 @@
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
 </a>
-  <div class="navbar-inner">
+  <div class="navbar-inner" style="background-color : ffffff;">
   	<!--logo-->
-    <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
+    <a class="brand" href="{{ url('/')}}"><img src="themes/images/logonew.png" width="115" height="200" /></a>
 		<form class="form-inline navbar-search" method="GET" action="/category" >
 		{{ csrf_field() }}
 		<input id="srchFld" class="srchTxt" type="text" name="search" />

@@ -15,22 +15,23 @@
 		<tr><th> I AM ALREADY REGISTERED  </th></tr>
 		 <tr>
 		 <td>
-			<form class="form-horizontal">
+			<form class="form-horizontal" id="loginForm2">
 				<div class="control-group">
-				  <label class="control-label" for="inputUsername">Username</label>
+				  <label class="control-label" for="inputUsername">Email</label>
 				  <div class="controls">
-					<input type="text" id="inputUsername" placeholder="Username">
+					<input type="text" id="inputUsername" placeholder="Username" name="email">
 				  </div>
 				</div>
 				<div class="control-group">
 				  <label class="control-label" for="inputPassword1">Password</label>
 				  <div class="controls">
-					<input type="password" id="inputPassword1" placeholder="Password">
+					<input type="password" id="inputPassword1" placeholder="Password" name="password">
 				  </div>
 				</div>
 				<div class="control-group">
 				  <div class="controls">
-					<button type="submit" class="btn">Sign in</button> OR <a href="register.html" class="btn">Register Now!</a>
+					<button role="button"  class="btn loginUser">Sign in</button> OR 
+					<a href="#signup" role="button" data-toggle="modal" style="padding-right:0"><span class="btn">Daftar Sekarang</span></a>
 				  </div>
 				</div>
 				<div class="control-group">
@@ -44,10 +45,7 @@
 	</table>
 
 	<div class="form-group">
-    <div class="alert alert-danger">
-        <ul>
-            <li>Silahkan Login Terlebih Dahulu</li>
-        </ul>
+    <div class="alert alert-danger" id="errorjsLogin2">
     </div>
 </div>
 	@else

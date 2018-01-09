@@ -28,7 +28,7 @@
     <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
 		<form class="form-inline navbar-search" method="GET" action="/category" >
 		{{ csrf_field() }}
-		<input id="srchFld" class="srchTxt" type="text" />
+		<input id="srchFld" class="srchTxt" type="text" name="search" />
 
           <select class="srchTxt" name="category">
 			<option value="Atasan Wanita">Atasan Wanita </option>
@@ -38,7 +38,7 @@
 			<option value="Bawahan Pria">Bawahan Pria </option>
 			<option value="Aksesoris Pria">Aksesoris Pria </option>
 		</select>
-		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
+		  <button type="submit" id="submitButton" class="btn btn-primary" id="btnSearch">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class="">

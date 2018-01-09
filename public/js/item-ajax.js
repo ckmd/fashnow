@@ -97,6 +97,42 @@ $( document ).ready(function() {
         funcs[i]();
     } 
 
+    $("#loginUser").click(function(e){
+        e.preventDefault();
+        var form_action = $("#loginForm").find("form").attr("action");
+
+        var email = $("#loginForm").find("input[name='email']").val();
+        var password = $("#loginForm").find("input[name='password']").val();
+        
+        $.ajax({
+            dataType : 'JSON',
+            type : 'POST',
+            url : form_action,
+            data:{email, password}
+        }).done(function(data){
+            toastr.success('Anda berhasil Login.', 'Berhasil', {timeOut: 5000});
+            location.reload();
+        }).error(function(xhr){
+            console.log(xhr);
+            if (xhr.status == 200){
+                toastr.success('Anda berhasil Login.', 'Berhasil', {timeOut: 5000});
+                location.reload();
+            }else{
+                var response = JSON.parse(xhr.responseText);
+                var errors = response.errors;
+                var htmerror = $("#errorsjs");
+
+                /* looping jquery*/
+                htmerror.html('<ul></ul>');
+                $.each(errors, function() {
+                    $.each(this, function(k, v) {
+                    htmerror.append('<li>' + v + '</li>');
+                    });
+                });
+            }
+        });
+    });
+
     $("#registerUser").click(function(e){
         e.preventDefault();
 

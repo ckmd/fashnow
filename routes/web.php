@@ -24,7 +24,6 @@ Route::get('/products/{id}','ProductsController@showDetail');
 Route::post('/products/{id}','ProductsController@calculate');
 Route::get('/confirmation','BuysController@confirmation');
 //Route::get('/home', 'HomeController@index');
-Route::post('/products','ProductsController@tambahStock');
 Route::get('/products','ProductsController@showProducts');
 Route::post('/succeess','BuysController@prosesTransaksi');
 Route::get('/profil','UsersController@index');

@@ -18,7 +18,6 @@ $( document ).ready(function() {
         header.html(data.stock + ' item dalam stock');
     }
 
-    /* MAIN function Tambah Stock*/
 
     /* Tombol tambah ke keranjang*/
     function loopingKeranjang(i){
@@ -98,14 +97,33 @@ $( document ).ready(function() {
         funcs[i]();
     } 
 
-    function sudahLogin(user_id)
-    {
-        if (typeof user_id === 'undefined')
-        {
-            console.log('masuk');
-            toastr.error('silahkan login terlebih dahulu', 'Belum login', {timeOut: 5000});
-            return false;
-        }
-        return true;
-    }
+    $("#registerUser").click(function(e){
+        e.preventDefault();
+
+        var form_action = $("#registerForm").find("form").attr("action");
+        var nama = $("#registerForm").find("input[name='name']").val();
+        var email = $("#registerForm").find("input[name='email']").val();;
+        var address = $("#registerForm").find("input[name='address']").val();;
+        var telepon = $("#registerForm").find("input[name='phone']").val();;
+        var password = $("#registerForm").find("input[name='password']").val();
+        var konfirmasipassword = $("#registerForm").find("input[name='password_confirmation']").val();
+
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: form_action,
+            data:{nama,email, address, telepon, password, konfirmasipassword}
+        }).done(function(data){
+            console.log('success');
+        }).error(function(xhr){
+            var response = JSON.parse(xhr.responseText);
+            console.log(response.errors);
+            var htmerror = $("#errorsjs");
+            response.errors.forEach(function(error){
+                htmerror.innerHTML('a');
+            });
+            console.log(response);
+        });     
+    });
+
 });

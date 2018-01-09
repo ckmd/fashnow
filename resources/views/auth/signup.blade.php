@@ -3,6 +3,7 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Mendaftarkan Account</h3>
 		  </div>
+		  <div id="registerForm">
 		  <div class="modal-body">
 			<form class="form-horizontal loginFrm" method="POST" action="{{ route('register') }} ">
 			  {{ csrf_field() }}
@@ -31,6 +32,19 @@
 							@if ($errors->has('email'))
 							<span class="help-block">
 								<strong>{{ $errors->first('email') }}</strong>
+							</span>
+						@endif
+			  			</td>
+					  </tr>
+					  <tr>
+			  			<td>
+							Address
+			  			</td>
+			  			<td>
+							<input class="form-control" type="text" id="inputAddress" placeholder="Address" name="address" required>
+							@if ($errors->has('address'))
+							<span class="help-block">
+								<strong>{{ $errors->first('address') }}</strong>
 							</span>
 						@endif
 			  			</td>
@@ -76,11 +90,13 @@
 			  			<td>
 			  			</td>
 			  			<td>
-							<button type="submit" class="btn btn-success">Daftar</button>			  				
+							<button type="submit" class="btn btn-success" id="registerUser">Daftar</button>			  				
 			  			</td>
 			  		</tr>
 			  	</table>
 			</div>
 			</form>		
+			@include ('layouts.errorjs')
+		  </div>
 		  </div>
 	</div>

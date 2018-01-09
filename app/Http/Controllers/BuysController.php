@@ -40,4 +40,9 @@ class BuysController extends Controller
 
       return view('post.succeess');
     }
+
+    public function history()
+    {
+      $history = History::all();
+    }
 }

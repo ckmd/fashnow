@@ -62,11 +62,15 @@ class ProductsController extends Controller
 
     public function showPerCategories()
     {
-      if (request()->has('category'))
+      if (request()->has('search') && request('search') != '')
       {
+
+        $request = request('search');
+        $products = Inventory::where('name','like','%'.$request.'%')->get();
+        
+      }else if (request()->has('category')){
         $request = request('category');
         $products = Inventory::where('category',$request)->get();
-      }else{
         // TODO implementasi Jika Search
       }
       return view('post.products',['products' => $products]);

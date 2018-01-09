@@ -29,7 +29,7 @@
 			  		</tr>
 			  		<tr>
 			  			<td>
-							<button type="submit" class="btn btn-success" id="loginUser" >Masuk</button>			  				
+							<button type="submit" class="btn btn-success loginUser" >Masuk</button>			  				
 			  			</td>
 			  		</tr>
 			  	</table>

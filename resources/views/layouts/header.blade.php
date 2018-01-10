@@ -25,7 +25,7 @@
 </a>
   <div class="navbar-inner">
   	<!--logo-->
-    <a class="brand" href="{{ url('/')}}"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
+    <a class="brand" href="{{ url('/')}}"><img src="themes/images/Fnlogo2.2.png" alt="Bootsshop" style="height : 60px;"/></a>
 		<form class="form-inline navbar-search" method="GET" action="/category" >
 		{{ csrf_field() }}
 		<input id="srchFld" class="srchTxt" type="text" />

@@ -52,9 +52,6 @@
 					<a  href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 					<div class="caption">
 					  <h5>{{$product->name}}</h5>
-					  <p>
-							{{$product->detail}}
-					  </p>
 					  <h4 style="text-align:center">
 							<a class="btn" href="product_details.html">
 								<i class="icon-zoom-in"></i></a>

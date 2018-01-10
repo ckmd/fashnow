@@ -9,44 +9,23 @@
     <th>dibuat_pada</th>
   </tr>
 <?php
-$item1 = 0;
-$item2 = 0;
-$item3 = 0;
-$item4 = 0;
-$item5 = 0;
-$item6 = 0;
+$items = array();
 ?>
-@foreach( Auth::user()->histories as $history )
+@foreach( Auth::user()->histories as $i=>$history )
     <tr>
       <th align="center" scope="row">{{ $history->id_history }}</th>
       <td>{{ $history->cart_id }}</td>
-      <td>{{$history->inventory_id}}</td>
+      <td>{{$history->inventory->name}}</td>
       <td align="center">{{ $history->quantity }}</td>
       <td>{{$history->created_at}}</td>
     </tr>
 <?php
-  switch ($history->inventory_id) {
-    case '1':
-      $item1++;
-      break;
-    case '2':
-      $item2++;
-      break;
-    case '3':
-      $item3++;
-      break;
-    case '4':
-      $item4++;
-      break;
-    case '5':
-      $item5++;
-      break;
-    case '6':
-      $item6++;
-      break;
-    default:
-      break;
-  }
+if (empty($items[$history->inventory->name])){
+  $items[$history->inventory->name] = 0;
+}
+
+$items[$history->inventory->name]++;
+
 ?>
 @endforeach
 </table>
@@ -58,13 +37,12 @@ $item6 = 0;
 
     function drawStuff() {
       var data = new google.visualization.arrayToDataTable([
-        ['Opening Move', 'Percentage'],
-        ["item 1", {{$item1}}],
-        ["item 2", {{$item2}}],
-        ["item 3", {{$item3}}],
-        ["item 4", {{$item4}}],
-        ["item 5", {{$item5}}],
-        ["item 6", {{$item6}}]
+        ['Nama Item', 'jumlah beli'],
+
+        @foreach($items as $key=>$value)
+        ['{{$key}}',{{$value}}],
+        @endforeach
+
       ]);
 
       var options = {

@@ -73,6 +73,7 @@ class ProductsController extends Controller
         $products = Inventory::where('category',$request)->get();
         // TODO implementasi Jika Search
       }
-      return view('post.products',['products' => $products]);
+      
+      return view('post.products',['products' => $products, 'test'=>'halo bro']);
     }
 }

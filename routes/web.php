@@ -30,6 +30,8 @@ Route::get('/products','ProductsController@showProducts');
 Route::post('/succeess','BuysController@prosesTransaksi');
 Route::get('/profil','UsersController@index');
 Route::delete('/product_summary/{id}', 'CartsController@destroy');
+Route::patch('/users/edit/{user}','UsersController@update');
+Route::get('/users/edit/{user}','UsersController@updatePage');
 Route::get('/history','BuysController@history');
 // Route::get('/products', function()
 // {

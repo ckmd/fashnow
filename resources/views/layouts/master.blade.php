@@ -44,7 +44,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/themes/images/ico/apple-touch-icon-57-precomposed.png">
-    <script src="/js/item-ajax.js"></script>
     <style type="text/css" id="enject"></style>
   </head>
 <body>
@@ -80,6 +79,7 @@
 
 	<script src="/themes/js/bootshop.js"></script>
     <script src="/themes/js/jquery.lightbox-0.5.js"></script>
+    <script src="/js/item-ajax.js"></script>
 
 	<!-- Themes switcher section ============================================================================================= -->
 <div id="secectionBox">

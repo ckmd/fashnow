@@ -5,10 +5,18 @@
 <!-- Sidebar end=============================================== -->
 	<div class="span9">
     <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+		<li><a href="/">Home</a> <span class="divider">/</span></li>
+		@if (request('search') != '' )
+		<li class="active">{{ request('search') }}</li>
+		@else
 		<li class="active">{{ request('category') }}</li>
-    </ul>
+		@endif
+		</ul>
+		@if (request('search') != '' )
+	<h3> Hasil pencarian untuk {{ request('search') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
+	@else
 	<h3> {{ request('category') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
+	@endif
 	<hr class="soft"/>
 	<p>
 		Fashnow merupakan sebuah Toko Fashion online yang memiliki Cabang dimana mana dan selurh harga di toko ini. Semuanya terjangkau
@@ -33,16 +41,22 @@
 </div>
 <br class="clr"/>
 <div class="tab-content">
-	<div class="tab-pane" id="listView">
+	<div class="tab-pane active" id="listView">
 		<div class="row">
+			<script>
+			</script>
 		@foreach($products as $product)
 			<div class="span2">
 				<img src="{{url('/storage/'.$product->image)}}" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>New | Available</h3>
+			@if ($product->stock != 0 )
+					<h3><span class="btn btn-success">Tersedia</span></h5>
+				@else
+					<h5><span class="btn btn-danger">Stock Habis</span></h5>
+			@endif
 				<hr class="soft"/>
-				<h5>{{ $product->name }}</h5>
+				<h5><a href="/products/{{$product->id}}"> {{$product->name }}</a></h5>
 				<p>
 					{{ $product->detai}}
 				</p>
@@ -62,12 +76,13 @@
 				</form>
 			</div>
 			@endforeach
+			
 		</div>
-
+		
 		<hr class="soft"/>
 	</div>
 
-	<div class="tab-pane  active" id="blockView">
+	<div class="tab-pane" id="blockView">
 		<ul class="thumbnails">
 			<script>
 				var products_length = {{count($products)}}
@@ -80,14 +95,14 @@
 				<div class="caption">
 				  <a href="/products/{{$product->id}}"><h5>{{ $product->name }}</h5></a>
 				  <p> 
-					{{ $product->detai}} 
+					{{ $product->detail}} 
 				  </p>
 				   <h4 style="text-align:center">
 						 <a class="btn" href="">
 						 <i class="icon-zoom-in"></i></a> 
 						 <a class="btn tambah-keranjang{{$i}}" href="#">Add to
 								<i class="icon-shopping-cart"></i></a><br>
-								<a class="btn btn-primary" href="#">Rp ;{{$product->price}}</a>
+								<a class="btn btn-primary" href="#">{{$product->price}}</a>
 					</h4>
 				</div>
 			  </div>
@@ -98,20 +113,7 @@
 	</div>
 </div>
 
-	<a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
-	<div class="pagination">
-			<ul>
-			<li><a href="#">&lsaquo;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">...</a></li>
-			<li><a href="#">&rsaquo;</a></li>
-			</ul>
-			</div>
-			<br class="clr"/>
-</div>
+	
 </div>
 </div>
 </div>

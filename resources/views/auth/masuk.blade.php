@@ -3,8 +3,8 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>FASHNOW</h3>
 		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm" method="POST" action="{{ route('login') }}">
+		  <div class="modal-body" id="loginForm">
+			<form class="form-horizontal loginFrm" id="loginForm" method="POST" action="{{ route('login') }}">
 
             {{ csrf_field() }}
 
@@ -29,11 +29,18 @@
 			  		</tr>
 			  		<tr>
 			  			<td>
-							<button type="submit" class="btn btn-success" >Masuk</button>			  				
+							<button type="submit" class="btn btn-success loginUser" >Masuk</button>			  				
 			  			</td>
 			  		</tr>
 			  	</table>
 			  </div>
-			</form>		
+			</form>
+			<div class="form-group">
+    <div class="alert alert-danger" id="errorsjsLogin">
+      <ul>
+        
+      </ul>
+    </div>
+</div>
 		  </div>
 	</div>

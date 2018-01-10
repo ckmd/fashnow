@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CartsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,10 +26,12 @@ Route::get('/products/{id}','ProductsController@showDetail');
 Route::post('/products/{id}','ProductsController@calculate');
 Route::get('/confirmation','BuysController@confirmation');
 //Route::get('/home', 'HomeController@index');
-Route::post('/products','ProductsController@tambahStock');
 Route::get('/products','ProductsController@showProducts');
 Route::post('/succeess','BuysController@prosesTransaksi');
 Route::get('/profil','UsersController@index');
+Route::delete('/product_summary/{id}', 'CartsController@destroy');
+Route::patch('/users/edit/{user}','UsersController@update');
+Route::get('/users/edit/{user}','UsersController@updatePage');
 Route::get('/history','BuysController@history');
 // Route::get('/products', function()
 // {

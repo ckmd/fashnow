@@ -28,7 +28,7 @@
     <a class="brand" href="{{ url('/')}}"><img src="themes/images/Fnlogo2.2.png" alt="Bootsshop" style="height : 60px;"/></a>
 		<form class="form-inline navbar-search" method="GET" action="/category" >
 		{{ csrf_field() }}
-		<input id="srchFld" class="srchTxt" type="text" />
+		<input id="srchFld" class="srchTxt" type="text" name="search" />
 
           <select class="srchTxt" name="category">
 			<option value="Atasan Wanita">Atasan Wanita </option>
@@ -38,7 +38,7 @@
 			<option value="Bawahan Pria">Bawahan Pria </option>
 			<option value="Aksesoris Pria">Aksesoris Pria </option>
 		</select>
-		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
+		  <button type="submit" id="submitButton" class="btn btn-primary" id="btnSearch">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class="">
@@ -52,7 +52,7 @@
 	@include('auth.signup')
 	@else
 		<li class="">
-			<a href="/profil" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><span class="btn btn-large btn-warning">{{ Auth::user()->name }}</span></a></li>
+			<a href="/profil"  role="button" ><span class="btn btn-large btn-warning">{{ Auth::user()->name }}</span></a></li>
 		</li>
 	@endguest
 	</li>

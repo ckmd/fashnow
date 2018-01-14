@@ -12,7 +12,7 @@
 			  	<table>
 			  		<tr>
 			  			<td>
-			  				Nama			
+			  				Nama
 			  			</td>
 			  			<td>
 			  				<input class="form-control" type="text" id="inputNama" name="name" placeholder="Nama" required>
@@ -28,7 +28,7 @@
 							Email
 			  			</td>
 			  			<td>
-							<input class="form-control" type="text" id="inputEmail" placeholder="Email" name="email" required>
+							<input class="form-control" type="text" placeholder="Email" name="email" required>
 							@if ($errors->has('email'))
 							<span class="help-block">
 								<strong>{{ $errors->first('email') }}</strong>
@@ -51,10 +51,10 @@
 			  		</tr>
 			  		<tr>
 			  			<td>
-			  				Telepon  				
+			  				Telepon
 			  			</td>
 			  			<td>
-							<input type="text" id="inputTelepon" placeholder="Telepon" name="phone" class="form-control" required>			  				
+							<input type="text" id="inputTelepon" placeholder="Telepon" name="phone" class="form-control" required>
 							@if ($errors->has('phone'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phone') }}</strong>
@@ -64,10 +64,10 @@
 			  		</tr>
 			  		<tr>
 			  			<td>
-						  	Password	  				
+						  	Password
 			  			</td>
 			  			<td>
-						  	<input type="password" id="inputPassword" placeholder="Password" name="password" class="form-control" required>			
+						  	<input type="password" placeholder="Password" name="password" class="form-control" required>			
 							  @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -80,7 +80,7 @@
 			  				Konfirmasi Password
 			  			</td>
 			  			<td>
-							<input type="password" id="password-confirm" placeholder="Konfirmasi Password" name="password_confirmation" class="form-control" required>  				
+							<input type="password" id="password-confirm" placeholder="Konfirmasi Password" name="password_confirmation" class="form-control" required>
 			  			</td>
 			  		</tr>
 			  		<tr>
@@ -90,12 +90,12 @@
 			  			<td>
 			  			</td>
 			  			<td>
-							<button type="submit" class="btn btn-success" id="registerUser">Daftar</button>			  				
+							<button type="submit" class="btn btn-success" id="registerUser">Daftar</button>
 			  			</td>
 			  		</tr>
 			  	</table>
 			</div>
-			</form>		
+			</form>
 			@include ('layouts.errorjs')
 		  </div>
 		  </div>

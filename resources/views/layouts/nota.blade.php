@@ -1,4 +1,4 @@
-  <center><img src="themes/images/logofashnow.png" height="100" width="400" /></center>
+  <center><img src="themes/images/Fnlogo2.2.png" height="100" width="400" /></center>
 <table class="table table-bordered" border="1" align="center">
               <thead align="center">
                 <tr>
@@ -62,11 +62,11 @@
                 </tr>
 				</tbody>
     </table>
-    $php(session_start())
     @php($_session['total'] = $totalPrice)
     <div align="center">
       <h2>Fashnow</h2>
       <h3>Toko online terpercaya</h3>
       <h4>dicetak pada {{ date('Y-m-d H:i:s') }} waktu server</h3>
+        <h4 style="color : blue">confirmation key : SF43-3EE4-GFH6-YYY5</h4>
         <h4>Terima kasih atas pembelian anda<br>kami tunggu pembelian berikutnya</h4>
     </div>

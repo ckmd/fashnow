@@ -13,7 +13,7 @@
     </li>
     <li class="">
     	<a>Temukan kami di </a>
-    </li
+    </li>
 	 <li class="">
 		<a href="#"><img width="30" height="30" src="/themes/images/facebook.png" title="facebook" alt="facebook"/></a></li>
 	<li class="">

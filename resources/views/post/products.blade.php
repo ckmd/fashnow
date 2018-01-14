@@ -13,9 +13,9 @@
 		@endif
 		</ul>
 		@if (request('search') != '' )
-	<h3> Hasil pencarian untuk {{ request('search') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
+	<h3> Hasil pencarian untuk {{ request('search') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>
 	@else
-	<h3> {{ request('category') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>	
+	<h3> {{ request('category') }} <small class="pull-right"> {{count($products)}} products are available </small></h3>
 	@endif
 	<hr class="soft"/>
 	<p>
@@ -23,7 +23,7 @@
 		Selalu kunjungi fashnow tiap harinya. Karena akan selalu diupdate.
 	</p>
 	<hr class="soft"/>
-	<form class="form-horizontal span6">
+	<!-- <form class="form-horizontal span6">
 		<div class="control-group">
 		  <label class="control-label alignL">Sort By </label>
 			<select>
@@ -33,7 +33,7 @@
               <option>Price Lowest first</option>
             </select>
 		</div>
-	  </form>
+	  </form> -->
 
 <div id="myTab" class="pull-right">
  <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
@@ -47,7 +47,7 @@
 			</script>
 		@foreach($products as $product)
 			<div class="span2">
-				<img src="{{url('/storage/'.$product->image)}}" alt=""/>
+				<img src="{{url('/storage/'.$product->image)}}" alt="" style="height : 163px"/>
 			</div>
 			<div class="span4">
 			@if ($product->stock != 0 )
@@ -76,9 +76,9 @@
 				</form>
 			</div>
 			@endforeach
-			
+
 		</div>
-		
+
 		<hr class="soft"/>
 	</div>
 
@@ -94,12 +94,9 @@
 				<a href="/products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""/></a>
 				<div class="caption">
 				  <a href="/products/{{$product->id}}"><h5>{{ $product->name }}</h5></a>
-				  <p> 
-					{{ $product->detail}} 
-				  </p>
 				   <h4 style="text-align:center">
 						 <a class="btn" href="">
-						 <i class="icon-zoom-in"></i></a> 
+						 <i class="icon-zoom-in"></i></a>
 						 <a class="btn tambah-keranjang{{$i}}" href="#">Add to
 								<i class="icon-shopping-cart"></i></a><br>
 								<a class="btn btn-primary" href="#">{{$product->price}}</a>
@@ -113,7 +110,7 @@
 	</div>
 </div>
 
-	
+
 </div>
 </div>
 </div>

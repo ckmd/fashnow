@@ -32,7 +32,7 @@
     </tr>
     <tr>
       <td>Password</td>
-      <td><input type="text" class="form-control" id="password" name="password"  required></td>
+      <td><input type="password" class="form-control" id="password" name="password"  required></td>
     </tr>
     <tr>
       <td>address</td>
@@ -61,7 +61,7 @@
       </ul>
     </div>
 </div>
-  
+
 </form>
 @endguest
 @endsection

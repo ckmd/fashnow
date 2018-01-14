@@ -21,7 +21,7 @@
 					@endif
 					<li class="span3">
 						<div class="thumbnail">
-							<a href="product_details.html"><img src="{{url('/storage/'.$product->image)}}" alt=""></a>
+							<a href="products/{{$product->id}}"><img src="{{url('/storage/'.$product->image)}}" alt=""></a>
 							<div class="caption">
 								<h5>{{$product->name}}</h5>
 								<h4><a class="btn" href="products/{{$product->id}}">VIEW</a> <span class="pull-right">Rp {{$product->price}}</span></h4>
